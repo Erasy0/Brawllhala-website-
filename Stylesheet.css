@@ -1,0 +1,947 @@
+body{
+    margin: 0;
+    padding: 0;   
+}
+.scrollable-area{
+  scroll-snap-type: y mandatory; /* Enables vertical snap scrolling */
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100vh;
+  width: 100%;
+  scroll-behavior: smooth;
+}
+.scroll{
+  scroll-snap-align: start; /* Aligns the top of each section to the viewport */
+  height: 100vh; /* Each section takes up the full viewport height */
+  width: 100%;
+
+}
+#Home-section{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to bottom,#507557,#2d3330);
+    
+
+}
+
+
+
+.nav-wrapper {
+    display: flex;
+    position: relative;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    left: 150px;
+    margin-left: 26px;
+    width:75%;
+    height: 86px;
+    border-radius: 0 0 25px 25px;
+    padding:0 25px ;
+    z-index: 2;
+    background:linear-gradient(125deg,#94ECBE,#1A1F16) ;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  }
+  
+  .nav-tabs  {
+    display: flex;
+    color:white;
+    font-size: 22px;
+    list-style: none;
+    font-family: "Russo One", serif;
+  }
+  .Txt-deco{
+    text-decoration: none;
+    color: white;
+  }
+  
+  .nav-tab:not(:last-child) {
+    padding: 10px 20px;
+    margin: 0;
+    border-right: 1px solid #eee;
+  }
+  
+  .nav-tab:last-child {
+    padding: 10px 0 0 547px;
+  }
+  
+  .nav-tab,
+  .menu-btn {
+    cursor: pointer;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  
+  @media screen and (max-width: 800px) {
+    .nav-container {
+      position: fixed;
+      display: none;
+      overflow-y: auto;
+      z-index: -1;
+      top: 0;
+      right: 0;
+      width: 280px;
+      height: 100%;
+      background: #fff;
+      box-shadow: -1px 0 2px rgba(0, 0, 0, 0.2);
+    }
+  
+    .nav-tabs {
+      flex-direction: column;
+      align-items: flex-end;
+      margin-top: 80px;
+      width: 100%;
+    }
+  
+    .nav-tab:not(:last-child) {
+      padding: 20px 25px;
+      margin: 0;
+      border-right: unset;
+      border-bottom: 1px solid #f5f5f5;
+    }
+  
+    .nav-tab:last-child {
+      padding: 15px 25px;
+    }
+  
+    .menu-btn {
+      position: relative;
+      display: block;
+      margin: 0;
+      width: 20px;
+      height: 15px;
+      cursor: pointer;
+      z-index: 2;
+      padding: 10px;
+      border-radius: 10px;
+    }
+  
+    .menu-btn .menu {
+      display: block;
+      width: 100%;
+      height: 2px;
+      border-radius: 2px;
+      background: #111;
+    }
+  
+    .menu-btn .menu:nth-child(2) {
+      margin-top: 4px;
+      opacity: 1;
+    }
+  
+    .menu-btn .menu:nth-child(3) {
+      margin-top: 4px;
+    }
+  
+    #menuToggle:checked + .menu-btn .menu {
+      transition: transform 0.2s ease;
+    }
+  
+    #menuToggle:checked + .menu-btn .menu:nth-child(1) {
+      transform: translate3d(0, 6px, 0) rotate(45deg);
+    }
+  
+    #menuToggle:checked + .menu-btn .menu:nth-child(2) {
+      transform: rotate(-45deg) translate3d(-5.71429px, -6px, 0);
+      opacity: 0;
+    }
+  
+    #menuToggle:checked + .menu-btn .menu:nth-child(3) {
+      transform: translate3d(0, -6px, 0) rotate(-45deg);
+    }
+  
+    #menuToggle:checked ~ .nav-container {
+      z-index: 1;
+      display: flex;
+      animation: menu-slide-left 0.3s ease;
+    }
+    @keyframes menu-slide-left {
+      0% {
+        transform: translateX(200px);
+      }
+      to {
+        transform: translateX(0);
+      }
+    }
+  }
+ 
+  .Character-containers{
+    display: flex;
+    position: relative;
+    margin: 20px;
+    margin-right: 0px;
+    gap: 100px;
+    left: 4%;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+  }
+  .box{
+    display: flex;
+    height: 500px;
+    width: 290px;
+    border-radius: 70px;
+    z-index: 1;
+    
+  }
+
+  .Vivi-box{
+  
+    background: linear-gradient(195deg,#d9d7dc,#3b1d58);
+    z-index: 1;
+  }
+  .Vivi-home-img{
+    height: 480px;
+    width: 391px;
+    z-index: 1;
+  }
+  .Vivi-txt-container{
+    display: flex;
+    position: relative;
+    left: -45%;
+    top: 86%;
+    z-index: 1;  
+  }
+  .vivi-home-txt{
+    color: white;
+    font-size: 30px;
+    font-family: "Barlow", serif;
+    font-weight: 600;
+    font-style: normal;
+    z-index: 1;
+  }
+  .Vivi-glow-effect{
+    position: absolute;
+    height: 515px;
+    left: 9%;
+    z-index: -1;
+    width: 265px;
+    background: rgba(153, 114, 190, 0.5) ;
+    filter: blur(70px);
+    border-radius: 50px;
+  }
+  .Zuva-glow-effect{
+    position: absolute;
+    height: 515px;
+    left: 36%;
+    z-index: -1;
+    width: 265px;
+    background: rgba(97, 202, 237, 0.5) ;
+    filter: blur(70px);
+    border-radius: 50px;
+  }
+  .Thea-glow-effect{
+    position: absolute;
+    height: 515px;
+    left: 64%;
+    bottom: 7%;
+    z-index: -1;
+    width: 265px;
+    background: rgba(212,165,22,0.5) ;
+    filter: blur(70px);
+    border-radius: 50px;
+  }
+  .Zuva-box{
+    background:linear-gradient(46deg,#7a4431,#117596) ;
+    z-index: 2;
+  }
+  .King-zuva-img{
+    width: 763px;
+    height: 500px;
+    position: relative;
+    right: 64%;
+    z-index: 2;
+  }
+  .King-txt-container{
+    display: flex;
+    position: relative;
+    right: 36rem;
+    top: 80%;
+    z-index: 2;
+  }
+
+  .King-home-txt{
+    color: white;
+    font-size: 32px;
+    font-family: "Barlow", serif;
+    font-weight: 600;
+    font-style: normal;
+    z-index: 2;
+  }
+
+ 
+  .Thea-box{
+    background:linear-gradient(232deg,#d4a416,#722e8e) ;
+    z-index: 1;
+  }
+  .Thea-home-img{
+    width: 713px;
+    height: 450px;
+    position: relative;
+    right: 58%;
+    top: 9%;
+    z-index: 1;
+  }
+  .Thea-txt-container{
+    display: flex;
+    position: relative;
+    right: 15%;
+    top: 38%;
+    z-index: 1;
+  }
+  .Thea-home-txt{
+    color: white;
+    font-size: 30px;
+    font-family: "Barlow", serif;
+    font-weight: 600;
+    font-style: normal;
+    z-index: 1;
+  }
+
+  #Viviana-section{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to bottom,#e4e4e4,#42245d);
+  }
+  .Viviana-txt{
+    position: absolute;
+    left: 31%;
+    top: 0;
+  }
+  .vivi-h1{
+    color: white;
+    font-size: 77px;
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: white;
+    letter-spacing: 2.5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  }
+ 
+  .Viviana-img-container{
+    position: relative;
+    left: 38%;
+    top: 30%;
+
+  }
+  .viviana-img{
+    height: 532px;
+    width:331px ;
+  }
+
+  .Viviana-weapon-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    left: 16%;
+    bottom: 70%;
+    gap: 115px;
+  }
+ .Boots-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #C369FF; /* Border thickness and color */
+    background-color: transparent;
+    border-radius: 48px;
+
+  }
+  .Blasters-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #B23EFF;
+    background-color: transparent;
+    border-radius: 48px;
+  }
+
+  .idle-pose-container{
+   position: absolute;
+   left: 65%;
+   top: 39%;
+   
+  }
+  .vivi-idle-pose-container{
+    height: 380px;
+    width: 200px; 
+    border: 3px solid #B23EFF;
+    background-color: transparent;
+    border-radius: 48px;
+  }
+  .Battle-Boots-name-vivi{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 24%;
+    bottom: 7%;
+  }
+  .vivi-Boots{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 24%;
+    top: 13%;
+    margin: 0;
+  }
+  .Au-se-mao{
+    height: 80px;
+    width: 120px;
+  }
+  .Vivi-Battle-boots{
+    position: relative;
+    left: 20%;
+  }
+ .Blasters-name-vivi{
+  font-family: "Alegreya Sans SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  font-size: 19px;
+  position: relative;
+  left: 18%;
+  bottom: 5%;
+  }
+  .vivi-blasters{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 22px;
+    position: relative;
+    left: 28%;
+    top: 2%;
+    margin: 0;
+  }
+  .charmed-sure{
+    height: 100px;
+    width: 80px;
+  }
+  .vivi-blasters-container{
+    position: relative;
+    bottom: 7%;
+    left: 29%;
+  }
+  .vivi-idle{
+  
+    height: 212px;
+    width: 97px;
+  }
+  .vivi-idle-pose{
+    position: absolute;
+    left: 22%;
+    top: 30%;
+  }
+  .idle-pose-txt{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    left: 22%;
+    top: 87%;
+  }
+  .vivi-button-container{
+   position: absolute;
+   left: 52%;
+   top: 27%;
+   display: inline-block;
+  }
+  @font-face{
+    font-family: "Uefa euro";
+    src: url("./Fonts/UEFAEuro-HeavyExtended.ttf") format('truetype');
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Uefa euro-2";
+    src: url("./Fonts/UEFAEuro-Medium.ttf") format('truetype');
+    font-style: normal;
+  }
+  @font-face {
+    font-family: "Uefa euro-3";
+    src: url("./Fonts/UEFAEuro-Heavy.ttf") format('truetype');
+    font-style: normal;
+  }
+  .vivi-bio-button{
+    font-family:'Uefa euro';
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1.3px;
+    font-weight: 800;
+    width: 86px;
+    height: 49px;
+    background-color: transparent;
+    border: 2px solid #B23EFF;
+    border-radius: 24px;
+    box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+    position: relative;
+  }
+  .Vivi-bio-txt-container{
+    opacity: 0;
+     transition: opacity 0.5s ease-in-out;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.8);
+    top: 9px;
+    height: 363px;
+    width: 570px;
+    border:2px solid #B23EFF;
+    border-radius: 34px;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .vivi-bio-txt{
+    opacity: 1;
+    font-family: "Uefa euro-2";
+    font-size: 21px;
+    color: #5B108D ;
+    line-height: 1.5;
+    padding: 11px;
+  }
+  .vivi-bio-button:hover + .Vivi-bio-txt-container {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  
+  .the-dancer{
+    font-family: "Uefa euro-3";
+  }
+  .vivi-qoute{
+    font-family: "Uefa euro-3";
+  }
+  /*KING ZUVA SECTION*/
+
+  #Zuva-section{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to bottom,#02a4b2,#854919);
+  }
+  .King-txt{
+    position: absolute;
+    left: 38%;
+    top: 0;
+  }
+  .King-h1{
+    color: white;
+    font-size: 77px;
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: white;
+    letter-spacing: 3px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
+  .Zuva-img-container{
+    position: relative;
+    left: 27%;
+    top: 30%;
+
+  }
+  .King-Zuva-img{
+    width: 660px;
+    height: 520px;
+  }
+  .King-Zuva-weapon-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    left: 16%;
+    bottom: 70%;
+    gap: 115px;
+  }
+ .Zuva-Boots-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #D9C0A4; /* Border thickness and color */
+    background-color: transparent;
+    border-radius: 48px;
+
+  }
+  .Hammer-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #D9C0A4;
+    background-color: transparent;
+    border-radius: 48px;
+  }
+
+  .Zuva-idle-pose-container{
+   position: absolute;
+   left: 75%;
+   top: 38%;
+   
+  }
+  .King-Zuva-idle-pose-container{
+    height: 380px;
+    width: 200px; 
+    border: 3px solid #D9C0A4;
+    background-color: transparent;
+    border-radius: 48px;
+  }
+  .Battle-Boots-name-vivi{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 21%;
+    bottom: 7%;
+  }
+  .Zuva-Boots{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 24%;
+    bottom: 24%;
+    margin: 0;
+  }
+  .The-Stampede{
+    height: 150px;
+    width: 150px;
+  }
+  .King-Zuva-Battle-boots{
+    position: relative;
+    left: 12%;
+    bottom: 17%;
+  }
+ .Hammer-name-Zuva{
+  font-family: "Alegreya Sans SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  font-size: 20px;
+  position: relative;
+  left: 28%;
+  bottom: 5%;
+  }
+  .King-Zuva-hammer{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 32%;
+    bottom: 9%;
+    margin: 0;
+  }
+  .Kutinhira{
+    height: 120px;
+    width: 150px;
+  }
+  .King-Zuva-hammer-container{
+    position: relative;
+    bottom: 4%;
+    left: 14%;
+  }
+  .King-Zuva-idle{
+  
+    height: 220px;
+    width: 130px;
+  }
+  .Zuva-idle-pose{
+    position: absolute;
+    left: 19%;
+    top: 30%;
+  }
+  .Zuva-idle-pose-txt{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    left: 24%;
+    top: 87%;
+  }
+
+.Zuva-button-container{
+    position: absolute;
+    left: 53%;
+    top: 20%;
+    display: inline-block;
+     } 
+ .Zuva-bio-button{
+     font-family:'Uefa euro';
+     color: white;
+     font-size: 20px;
+     letter-spacing: 1.3px;
+     font-weight: 800;
+     width: 86px;
+     height: 49px;
+     background-color: transparent;
+     border: 2px solid #D9C0A4;
+     border-radius: 24px;
+     box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
+     z-index: 2;
+     position: relative;
+   }
+  .Zuva-bio-txt-container{
+     opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+     position: absolute;
+     background-color: rgba(255, 255, 255, 0.8);
+     top: 9px;
+     height: 363px;
+     width: 570px;
+     border:2px solid #8E4502;
+     border-radius: 34px;
+     pointer-events: none;
+     z-index: 1;
+   }
+   
+  .Zuva-bio-txt{
+     opacity: 1;
+     font-family: "Uefa euro-2";
+     font-size: 21px;
+     color: #953416 ;
+     line-height: 1.5;
+     padding: 11px;
+   }
+  .Zuva-bio-button:hover + .Zuva-bio-txt-container {
+     opacity: 1;
+     pointer-events: auto;
+   }
+   
+  .the-King{
+     font-family: "Uefa euro-3";
+   }
+  .Zuva-qoute{
+     font-family: "Uefa euro-3";
+   }
+
+   #Thea-section{
+    position: relative;
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    background:linear-gradient(to bottom,#d8a912,#7a3884);
+  }
+  .Thea-txt{
+    position: absolute;
+    left: 24%;
+    top: 0;
+  }
+  .Thea-h1{
+    color: white;
+    font-size: 77px;
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+    text-decoration-color: white;
+    letter-spacing: 2.5px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+
+  }
+  .Thea-img-container{
+    position: relative;
+    left: 34%;
+    top: 57%;
+
+  }
+  .Thea-Zuva-img{
+    width: 500px;
+    height: 420px;
+  }
+  .Thea-weapon-container{
+    display:flex;
+    flex-direction: column;
+    position: relative;
+    left: 16%;
+    bottom: 47%;
+    gap: 115px;
+  }
+ .Thea-boots-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #FED04F; /* Border thickness and color */
+    background-color: transparent;
+    border-radius: 48px;
+
+  }
+  .Lance-container{
+    width: 200px; /* Box width */
+    height: 200px; /* Box height */
+    border: 3px solid #FED04F;
+    background-color: transparent;
+    border-radius: 48px;
+  }
+  .Battle-Boots-name-Thea{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 700;
+    font-style: normal;
+    color: white;
+    font-size: 17px;
+    position: relative;
+    left: 16%;
+    bottom: 7%;
+  }
+  .Thea-Boots{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 20px;
+    position: relative;
+    left: 24%;
+    top: 9%;
+    margin: 0;
+  }
+  .The-Runners{
+    height: 95px;
+    width: 120px;
+  }
+  .Thea-Battle-boots{
+    position: relative;
+    left: 20%;
+  }
+  .Lance-name-Thea{
+  font-family: "Alegreya Sans SC", serif;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  font-size: 17px;
+  position: relative;
+  left: 18%;
+  bottom: 5%;
+  }
+  .Thea-Lance{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 22px;
+    position: relative;
+    left: 23%;
+    bottom: 6%;
+    margin: 0;
+  }
+  .Sky-Rocket{
+    height: 120px;
+    width: 100px;
+  }
+  .Thea-Lance-container{
+    position: relative;
+    bottom: 7%;
+    left: 29%;
+  }
+  .Thea-Athens-idle{
+  
+    height: 220px;
+    width: 130px;
+  }
+  .Thea-idle-pose{
+    position: absolute;
+    left: 19%;
+    top: 30%;
+  }
+  .Thea-Athens-idle-pose-txt{
+    font-family: "Alegreya Sans SC", serif;
+    font-weight: 300;
+    font-style: italic;
+    color: white;
+    font-size: 19px;
+    position: absolute;
+    left: 24%;
+    top: 87%;
+  }
+  .Thea-idle-pose-container{
+    position: absolute;
+    left: 75%;
+    top: 38%;
+    
+   }
+   .Thea-Athens-idle-pose-container{
+     height: 380px;
+     width: 200px; 
+     border: 3px solid #FED04F;
+     background-color: transparent;
+     border-radius: 48px;
+   }
+
+   .Thea-button-container{
+    position: absolute;
+    left: 53%;
+    top: 20%;
+    display: inline-block;
+     } 
+ .Thea-bio-button{
+     font-family:'Uefa euro';
+     color: white;
+     font-size: 20px;
+     letter-spacing: 1.3px;
+     font-weight: 800;
+     width: 86px;
+     height: 49px;
+     background-color: transparent;
+     border: 2px solid #FED04F;
+     border-radius: 24px;
+     box-shadow: 1px 4px 5px rgba(0, 0, 0, 0.2);
+     z-index: 2;
+     position: relative;
+   }
+  .Thea-bio-txt-container{
+     opacity: 0;
+      transition: opacity 0.5s ease-in-out;
+     position: absolute;
+     background-color: rgba(255, 255, 255, 0.8);
+     top: 9px;
+     height: 398px;
+     width: 570px;
+     border:2px solid #Ffd700;
+     border-radius: 34px;
+     pointer-events: none;
+     z-index: 1;
+   }
+   
+  .Thea-bio-txt{
+     opacity: 1;
+     font-family: "Uefa euro-2";
+     font-size: 20px;
+     color: #0D0933;
+     line-height: 1.5;
+     padding: 11px;
+   }
+  .Thea-bio-button:hover + .Thea-bio-txt-container {
+     opacity: 1;
+     pointer-events: auto;
+   }
+   
+  .the-Speedster{
+     font-family: "Uefa euro-3";
+   }
+  .Thea-qoute{
+     font-family: "Uefa euro-3";
+   }
+
+ 
+
