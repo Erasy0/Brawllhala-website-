@@ -5,6 +5,7 @@ body{
     margin: 0;
     padding: 0;
     overflow-x: hidden;
+    overflow-y: hidden;
 
 }
 
@@ -409,7 +410,7 @@ width: 180px;
 .Id-txt-container{
   position: relative;
   display: flex;
-  left: 13%;
+  left: 9%;
   bottom: 20%;
  
 }
@@ -427,7 +428,7 @@ width: 180px;
 .Accountlvl-txt-container{
   position: relative;
   display: flex;
-  left: -45.6%;
+  left: -50%;
   
   
 
@@ -442,5 +443,86 @@ width: 180px;
   white-space: nowrap;
 
 }
+.Region-container{
+  position: relative;
+  display: flex;
+  left: -112.6%;
+  top: 19.7%;
+}
 
+.Region-txt{
+  font-size: 26px;
+  font-family: "Turret Road", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  color:#FFFFFF;
+  letter-spacing: 0.6px;
+  white-space: nowrap;
+}
 
+.battle-boots-container{
+  position: relative;
+  left: 5%;
+  top: 17%;
+
+}
+
+.battle-boots-img{
+  height: 90px;
+  width: 90px;
+}
+
+.blasters-container{
+  position: relative;
+  bottom: 18%;
+  left: 38%;
+}
+
+.blaster-img{
+  height: 90px;
+  width: 90px;
+}
+
+.gauntlets-container{
+  position: relative;
+  bottom: 66%;
+  left: 67%;
+}
+
+.gauntlet-img{
+  height: 105px;
+  width: 105px;
+}
+
+.Vivi-image-container{
+  position: relative;
+  bottom: 55%;
+  right: 65%;
+
+  
+}
+
+.Vivi-img{
+  height: 145px;
+  width: 120px;
+}
+
+.King-zuva-img-container{
+  position: relative;
+  top: 17%;
+  right: 8%;
+}
+
+.King-zuva-img{
+  height: 155px;
+  width: 160px;
+}
+.Thea-image-container{
+  position: relative;
+  bottom: 55%;
+  right: 67%;
+}
+.Thea-image{
+  height: 150px;
+  width: 165px;
+}
